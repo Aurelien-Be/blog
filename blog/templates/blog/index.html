@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+My Blog 
+{%endblock%}
+
+{% block css_files%}
+   <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+   <link rel="stylesheet" href="{% static "blog/index.css" %}"/>
+   <link rel="stylesheet" href="{% static "my_site/app.css" %}"/>
+{% endblock%}
+
+{% block content%} 
+<section id="welcome"> 
+  <header>
+    <img src="{% static "blog/images/profilpic.jpg"%}" alt="Aurelien - The Author Of This Blog"/>
+    <h2>AURELIEN'S BLOG</h2>
+  </header>
+  <p>Hi, I am Aurélien and I like to blog about tech, language learning, Russia.. ! </p>
+</section>
+
+<section id="latest-posts">
+  <h2>My Latest Thoughts</2>
+
+  <ul>
+    {% for post in posts %}
+    {% include "blog/includes/posts.html" %}
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="about">
+  <h2>What I Do</h2>
+  <p>I love programming, I enjoy exploring new technologies, and learn languages (mainly russian language).</p>
+  <p>My goal is to keep learning as a developer and share my experience
+  </p>
+
+</section>
+{% endblock %}
