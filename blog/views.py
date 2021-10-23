@@ -65,13 +65,13 @@ all_posts = [
           aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
           velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
         """
-    }
+    }           
 ]
 
-def get_date(post):
+def get_date(post):                         
     return post['date']
 
-# Create your views here.
+# Create your views here.   
 #A view function, or “view” is a Python function 
 # that takes a web request and returns a web response
 
