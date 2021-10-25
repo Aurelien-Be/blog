@@ -9,11 +9,21 @@ from django.core.validators import MinLengthValidator
 
 class Tag(models.Model):
     caption = models.CharField(max_length=20)
+#to show the tag in admin/blog/tag/ and not "objects"
+    def __str__(self):
+        return self.caption
 
 class Author(models.Model):
     first_name = models.CharField(max_length=15)
     name = models.CharField(max_length=30)
     emailadress = models.EmailField()
+    
+    #to show the full name in /admin/blog/author/
+    def full_name(self):
+        return f"{self.first_name} {self.name}"
+
+    def __str__(self):
+        return self.full_name()
 
 #Title, Exercpt, Image Name, Date, Slug, Content
 class Post(models.Model):
