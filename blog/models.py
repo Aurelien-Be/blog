@@ -36,4 +36,11 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, related_name="posts", null=True)
     tags = models.ManyToManyField(Tag)
 
-
+class Comments(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    user_name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField(max_length=300)
+    created = models.DateTimeField(auto_now_add=True) 
+    updated = models.DateTimeField(auto_now=True) 
+    
