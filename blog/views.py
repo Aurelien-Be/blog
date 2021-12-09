@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
+
 from .models import Post
+from .forms import CommentForm
 
 # Create your views here.   
 #A view function, or “view” is a Python function 
@@ -61,4 +63,6 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["post_tags"] = self.object.tags.all()
+        #then we add the comment feature
+        context["comment_form"] = CommentForm() #then we can call the form in the template
         return context
