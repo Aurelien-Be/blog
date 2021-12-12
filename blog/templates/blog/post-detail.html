@@ -35,7 +35,13 @@
 
   <div>
     <form>
-      {{comment_form}}
+      {%for form_field in comment_form%}
+      <div class="form-control">
+        {{ form_field.label_tag }}
+        {{ form_field}}
+        {{ form_field.errors }}
+      </div>
+      {%endfor%}
       <button>Publish comment</comment>
     </form>
   </div>
