@@ -26,7 +26,7 @@ class StartingPageView(ListView):
     ordering = ["-date"]
     context_object_name = "posts" #to be fetched in the template
 
-    def get_queryset(self):
+    def get_queryset(self):  #to return only 3 posts in the main page
         queryset = super().get_queryset()
         data = queryset[:3]
         return data 
@@ -66,12 +66,13 @@ class PostDetailView(View):
         context = {
             "post":post,
             "post_tags": post.tags.all(),
-            "comment_form": CommentForm()
+            "comment_form": CommentForm(),
+            "comments": post.comments.all().order_by('-created') #fetch the comments, in order to show them 
         }
         return render(request, "blog/post-detail.html", context )
     
     def post(self, request, slug):
-        comment_form = CommentForm(request.Post)
+        comment_form = CommentForm(request.POST)
         post = Post.objects.get(slug=slug) #we fetch the post
 
         if comment_form.is_valid():
@@ -85,6 +86,7 @@ class PostDetailView(View):
         context = {
             "post":post,
             "post_tags": post.tags.all(),
-            "comment_form": CommentForm()
+            "comment_form": CommentForm(),
+            "comments": post.comments.all().order_by('-created')
         }
         return render(request, "blog/post-detail.html", context )
