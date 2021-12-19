@@ -36,6 +36,9 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, related_name="posts", null=True)
     tags = models.ManyToManyField(Tag)
 
+    def __str__(self):
+        return self.title  #to diplay the title in comments section instead of post object
+
 class Comments(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     user_name = models.CharField(max_length=80)

@@ -76,10 +76,10 @@ class PostDetailView(View):
         post = Post.objects.get(slug=slug) #we fetch the post
 
         if comment_form.is_valid():
-            comment = comment_form.save(commit=False) #we can call save because its come from Forms, it is connected to the database
-            #commit=False create a new object and don't hit the database. In the CommentForm, we exclude the Post field, so it would cause pb without it 
+            comment = comment_form.save(commit=False) 
+            #commit=False creates a new object and don't hit the database. In the CommentForm, we exclude the Post field, so it would cause pb without it 
             comment.post = post #set the postfield to the post wich the commment should be related
-            comment.save()
+            comment.save() #we can call save because its come from Forms, it is connected to the database
 
             return HttpResponseRedirect(reverse('post-detail-page', args=[slug])) 
          
