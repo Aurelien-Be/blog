@@ -1,9 +1,9 @@
 body {
-    background-color: #e7e7e7;
+    background-color: black;
   }
   
   #main-navigation {
-    background-color: #390281;
+    background-color: #0e0b13;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   }
   
@@ -13,7 +13,7 @@ body {
     width: 90%;
     max-width: 90rem;
     border-radius: 16px;
-    background-color: #5706c0;
+    background-color: #0e0b13;
     position: relative;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     height: 22rem;
@@ -61,7 +61,8 @@ body {
     width: 90%;
     max-width: 90rem;
     margin: 3rem auto;
-    background-color: white;
+    background-color: #0e0b13;
+    color: white;
     padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -69,7 +70,7 @@ body {
 
   .tag {
     background-color: white;
-    color:#390281;
+    color:#0e0b13;
     padding: 0.2rem 0.5rem;
     border-radius: 12px;
   }
@@ -79,16 +80,16 @@ body {
     width: 90%;
     max-width: 40rem;
     border-radius: 12px;
-    background-color: white;
+    background-color: #0e0b13;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     padding: 1rem;
   }
   
   #comment-form button {
     font: inherit;
-    background-color: #390281;
+    background-color: #343436;
     color: white;
-    border: 1px solid #390281;
+    border: 1px solid #0e0b13;
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
     cursor: pointer;
@@ -96,8 +97,8 @@ body {
   
   #comment-form button:hover,
   #comment-form button:active {
-    background-color: #4f0ba7;
-    border-color: #4f0ba7;
+    color: #927700;
+
   }
   
   .form-control {
@@ -134,7 +135,8 @@ body {
   .invalid input,
   .invalid textarea {
     border-color: #d6000b;
-    background-color: #ffe6e7;
+    background-color: #0e0b13;
+    color:white;
   }
   
   #alert {
@@ -160,7 +162,8 @@ body {
     width: 90%;
     max-width: 60rem;
     border-radius: 12px;
-    background-color: white;
+    background-color: #0e0b13;
+    color:white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     padding: 1rem 2rem;
   }
@@ -173,7 +176,7 @@ body {
   
   #comment-form li {
     margin-bottom: 1rem;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #0e0b13;
   }
   
   #comment-form li:last-of-type {
@@ -181,7 +184,7 @@ body {
   }
   
   #comment-form h2 {
-    color: #464646;
+    color: white;
   }
 
   #comments {
@@ -189,7 +192,8 @@ body {
     width: 90%;
     max-width: 60rem;
     border-radius: 12px;
-    background-color: white;
+    background-color: #0e0b13;
+    color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     padding: 1rem 2rem;
   }
@@ -210,6 +214,6 @@ body {
   }
   
   #comments h2 {
-    color: #464646;
+    color: white;
   }
   
