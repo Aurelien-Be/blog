@@ -30,6 +30,17 @@
   h2 {
     color:white
   }
+
+span {
+    overflow: hidden;
+    display: block;
+    animation: spanFadeIn 500ms;
+    transform: translateY(50%);
+
+
+}
+
+
   #welcome p {
     color: white;
     font-size: 1.5rem;
@@ -74,4 +85,12 @@
   #about p {
     font-size: 1.5rem;
     color: #ffffff;
+  }
+
+
+  @keyframes spanFadeIn {
+    0% {
+      transform: translate(100)
+    }
+    100% transform: translate(0)
   }
