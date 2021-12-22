@@ -192,7 +192,7 @@ body {
     width: 90%;
     max-width: 60rem;
     border-radius: 12px;
-    background-color: #0e0b13;
+    background-color:black;
     color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     padding: 1rem 2rem;
@@ -202,6 +202,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    color:black
   }
   
   #comments li {
