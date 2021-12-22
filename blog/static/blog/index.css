@@ -27,18 +27,24 @@
     color: #e4e4e4;
     width: 10rem;
   }
-  h2 {
-    color:white
-  }
-
-span {
-    overflow: hidden;
-    display: block;
-    animation: spanFadeIn 500ms;
-    transform: translateY(50%);
-
-
+h2 {
+  color:white
 }
+  h2 > span {
+    overflow: hidden;
+    display:block;
+    min-width: 500px;  
+ }
+
+h2> span  :nth-child(2) {
+  animation-delay: 5s;
+}
+
+  h2 > span > span {
+    display: block;
+    animation: spanFadeIn 500ms ease forwards;
+    transform: translateY(50%);
+ }
 
 
   #welcome p {
@@ -90,7 +96,10 @@ span {
 
   @keyframes spanFadeIn {
     0% {
-      transform: translate(100)
-    }
-    100% transform: translate(0)
-  }
+      transform: translateY(100%);
+   }
+    100% {
+      transform: translateY(0%);
+   }
+ }
+  
