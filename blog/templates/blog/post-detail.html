@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load social_share %}
 
 
 {% block title %}
@@ -42,6 +43,13 @@
   {{post.content|linebreaks}}
 
   </main>
+  <section id="social_share">
+    {% post_to_linkedin object_or_url %} 
+    {% post_to_facebook object_or_url %}
+    {% post_to_telegram "Look at this article: " object_or_url %}
+    {% post_to_twitter "Look at this article: " object_or_url %}
+  </section>
+
   <section id="comments">
     <ul>
       {%for comments in comments %}

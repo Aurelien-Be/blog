@@ -75,6 +75,15 @@ body {
     border-radius: 12px;
   }
 
+  #social_share {
+    width: 30%;
+    max-width: 90rem;
+    margin: 2rem auto;
+    background-color: #0e0b13;
+    display: flex;
+    justify-content: space-around;  
+  }
+
   #comment-form {
     margin: 3rem auto;
     width: 90%;
