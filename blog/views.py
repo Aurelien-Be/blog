@@ -90,3 +90,21 @@ class PostDetailView(View):
             "comments": post.comments.all().order_by('-created')
         }
         return render(request, "blog/post-detail.html", context )
+
+
+class SearchView(ListView):
+    model = Post
+    template_name= "blog/searcharticle.html"
+    context_object_name= 'search_article'
+    paginate_by = 10
+    
+    def get_queryset(self):
+        result =
+    
+
+
+
+
+
+
+
