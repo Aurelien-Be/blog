@@ -1,17 +1,9 @@
-{% extends "base.html" %}
-{% load static %}
+<h1>Search Results</h1>
 
-
-{% block title %}
-Search  
-{%endblock%}
-
-{% block css_files%}
-   <link rel="stylesheet" href="{% static "blog/searcharticle.css" %}" />
-{% endblock%}
-
-
-
-{%block content%}
-<h2>Here is your results:</h2>
-{%endblock%}
+<ul>
+  {% for posts in object_list %}
+    <li>
+      {{ Post.title }}
+    </li>
+  {% endfor %}
+</ul>

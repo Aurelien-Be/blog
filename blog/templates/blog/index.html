@@ -32,6 +32,12 @@ My Blog
   </ul>
 </section>
 
+<section id="search">
+  <form action="{% url 'search-article' %}" method="get">
+    <input name="q" type="text" placeholder="Search...">
+  </form>
+</section>
+
 <section id="about">
   <img src="{% static "blog/images/logo_transparent.png"%}" alt="logo"/>
   <h2>What I Do</h2>

@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse #allows to construct urls automatically by just using the names of the urls 
 from django.views.generic import ListView
 from django.views import View 
+from django.db.models import Q 
 
 from .models import Post
 from .forms import CommentForm
@@ -94,12 +95,23 @@ class PostDetailView(View):
 
 class SearchView(ListView):
     model = Post
-    template_name= "blog/searcharticle.html"
+    template_name= "blog/index.html"
     context_object_name= 'search_article'
     paginate_by = 10
+    ordering = ["-date"]
     
-    def get_queryset(self):
-        result =
+    def get_queryset(self): 
+        query = self.request.GET.get('q')
+        object_list = Post.objects.filter(
+            Q(title__icontains=query) | Q(content__icontains=query)
+        )       
+        
+        return object_list.order_by('-date')
+
+
+
+
+        
     
 
 
