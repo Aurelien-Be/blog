@@ -95,7 +95,7 @@ class PostDetailView(View):
 
 class SearchView(ListView):
     model = Post
-    template_name= "blog/index.html"
+    template_name= "blog/searcharticle.html"
     context_object_name= 'search_article'
     paginate_by = 10
     ordering = ["-date"]
