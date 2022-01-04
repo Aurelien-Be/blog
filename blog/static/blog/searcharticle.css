@@ -1,12 +1,52 @@
 body {
-    background-color: black;
-    color: white
-  }
-    
+  background-color: black;
+}
+  
 #main-navigation {
-      background-color: #0e0b13;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    }
+    background-color: #0e0b13;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+#postsfound {
+    margin: 7rem auto;
+    width: 90%;
+    max-width: 60rem;
+  }
+  
+#postsfound h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin: 3rem 0;
+  }
+  
+#postsfound p {
+  text-align: justify;
+  color: black;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 1.5rem;
+    color:white
+  }
 
 
-    
+
+  
+.post img {
+    width: 7rem;
+    height: 7rem;
+  }
+  
+  .post a {
+    height: 22rem;
+    transform-origin: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    background-color: white;
+  }
