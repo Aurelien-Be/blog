@@ -22,4 +22,12 @@ All My Posts
    </ul>
      
 </section>
+
+<section id="search">
+   <h3>Search an article :</h3>
+   <form action="{% url 'search-article' %}" method="get">
+     <input name="q" type="text" placeholder="Search...">
+   </form>
+ </section>
+ 
 {% endblock %}
