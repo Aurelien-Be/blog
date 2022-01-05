@@ -20,6 +20,9 @@ body {
     margin: 3rem 0;
   }
   
+  #search h3 {
+    color : white
+  }
   ul {
     list-style: none;
     margin: 0;
@@ -41,3 +44,4 @@ body {
     border-radius: 12px;
     background-color: white;
   }
+

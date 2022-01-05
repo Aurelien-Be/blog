@@ -16,11 +16,15 @@
   <body>
       <header id="main-navigation">
          <h1><a href="{% url "starting-page" %}">Aurélien's Blog</a></h1>
+         <nav>
+          <a href="https://abeveraggi.pythonanywhere.com/contact.html">Contact me (first Flask website)</a>
+       </nav>
          <!--we use the name of the url that we added in url.py-->
          <nav>
            <a href="{% url "posts-page" %}">All posts</a>
           <!--we use the name of the url that we added in url.py-->
-          </nav>
+         </nav>
+
       </header>
 
    {% block content %}

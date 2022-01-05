@@ -13,7 +13,7 @@ body {
     width: 90%;
     max-width: 90rem;
     border-radius: 16px;
-    background-color: #0e0b13;
+    background-color: black;
     position: relative;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     height: 22rem;
@@ -61,7 +61,7 @@ body {
     width: 90%;
     max-width: 90rem;
     margin: 3rem auto;
-    background-color: #0e0b13;
+    background-color: black;
     color: white;
     padding: 1rem;
     border-radius: 12px;
@@ -76,13 +76,16 @@ body {
   }
 
   #social_share {
-    width: 30%;
-    max-width: 90rem;
+    width: 7rem;
     margin: 2rem auto;
     background-color: #0e0b13;
     display: flex;
-    justify-content: space-around;  
+    justify-content: flex-start;  
   }
+
+#comments ul li{
+  color:white
+}
 
   #comment-form {
     margin: 3rem auto;
@@ -171,7 +174,7 @@ body {
     width: 90%;
     max-width: 60rem;
     border-radius: 12px;
-    background-color: #0e0b13;
+    background-color: black;
     color:white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     padding: 1rem 2rem;

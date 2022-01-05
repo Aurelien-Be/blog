@@ -97,10 +97,12 @@ h2> span  :nth-child(2) {
     font-size: 3rem;
   }
   
-  #about p {
+  #about p, a{
     font-size: 1.5rem;
     color: #ffffff;
+    text-decoration: none!important;
   }
+
 
 
   @keyframes spanFadeIn {
