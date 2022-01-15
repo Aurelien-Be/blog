@@ -107,6 +107,11 @@ class SearchView(ListView):
         )       
         
         return object_list.order_by('-date')
+    
+
+class ReadLaterView(View):
+    def post(self, request):
+        pass
 
 
 

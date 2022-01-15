@@ -57,15 +57,31 @@ body {
     font-weight: bold;
   } 
   
+  #read-later {
+    margin: 2rem 0
+  }
+
+  #read-later button {
+    background-color: #343436;
+    padding: 0.25rem 1rem;
+    font : inherit;
+    color:white;
+    cursor: pointer
+
+  }
+  #read-later button:hover,
+  #read-later button:active  {
+    color:#927700;
+
+    }
   main {
-    width: 90%;
-    max-width: 90rem;
+    width: 40%;
+    max-width: 300rem;
     margin: 3rem auto;
     background-color: black;
     color: white;
     padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
   }
 
   .tag {
@@ -75,13 +91,6 @@ body {
     border-radius: 12px;
   }
 
-  #social_share {
-    width: 7rem;
-    margin: 2rem auto;
-    background-color: #0e0b13;
-    display: flex;
-    justify-content: flex-start;  
-  }
 
 #comments ul li{
   color:white

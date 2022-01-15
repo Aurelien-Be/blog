@@ -30,6 +30,13 @@
 
   {% endfor %}
   </div>
+  <div id="read-later">
+    <form action="{%url "read-later"%}" method="POST">
+      {% csrf_token %}
+      <input type="hidden" value="{{post.id}}" name="post_id">
+      <button>Read later</button>
+    </form>
+  <div>
   <article>
      <img src="{{post.image.url}}" alt={{post.title}} />
      <adress>By <a href="mailto:{{post.author.emailadress}}">{{post.author}}</a></adress>
@@ -43,10 +50,6 @@
   {{post.content|linebreaks}}
 
   </main>
-  <section id="social_share">
-    {% post_to_linkedin object_or_url %} 
-    <script async src="https://telegram.org/js/telegram-widget.js?15" data-telegram-share-url="https://core.telegram.org/widgets/share" data-text="notext"></script>  </section>
-
     <section id="comments">
     <ul>
       {%for comments in comments %}
