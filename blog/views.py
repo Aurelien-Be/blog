@@ -111,9 +111,17 @@ class SearchView(ListView):
 
 class ReadLaterView(View):
     def post(self, request):
-        pass
+        stored_posts = request.session.get('stored_posts') #.get to not have an error if there is no stored posts
 
-
+        if stored_posts is None:
+            stored_posts = []
+        
+        post_id = int(request.POST['post_id'])
+        
+        if post_id not in stored_posts:
+          stored_posts.append(post_id)
+        
+        return HttpResponseRedirect('/')
 
 
         
