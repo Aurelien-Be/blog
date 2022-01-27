@@ -21,7 +21,7 @@ from .forms import CommentForm
 #    ) 
 #in class based view:
 
-class StartingPageView(ListView): 
+class StartingPageView(ListView):  #render 3 article in the index 
     template_name = "blog/index.html"
     model = Post
     ordering = ["-date"]
@@ -46,7 +46,7 @@ class StartingPageView(ListView):
 #with the url /posts we render the all-posts.hml file
 #in class based view:
 
-class PostsView(ListView):
+class PostsView(ListView): #render articles
     template_name = "blog/all-posts.html"
     model = Post
     context_object_name = "all_posts" 
@@ -60,15 +60,26 @@ class PostsView(ListView):
 #             "post_tags": identified_post.tags.all()
 #    } ) 
 #in class based view:
-class PostDetailView(View):
+class PostDetailView(View): #render a single article
+
+    def is_stored_post(self, request, post_id):
+        stored_posts = request.session.get("stored_posts")
+        if stored_posts is not None:
+            is_save_for_later = post_id in stored_posts
+        else:
+            is_save_for_later = False
+
+        return is_save_for_later
 
     def get(self, request, slug):
         post = Post.objects.get(slug=slug)
+        
         context = {
             "post":post,
             "post_tags": post.tags.all(),
             "comment_form": CommentForm(),
-            "comments": post.comments.all().order_by('-created') #fetch the comments, in order to show them 
+            "comments": post.comments.all().order_by('-created'), #fetch the comments, in order to show them 
+            "saved_for_later": self.is_stored_post(request, post.id)
         }
         return render(request, "blog/post-detail.html", context )
     
@@ -88,12 +99,13 @@ class PostDetailView(View):
             "post":post,
             "post_tags": post.tags.all(),
             "comment_form": CommentForm(),
-            "comments": post.comments.all().order_by('-created')
+            "comments": post.comments.all().order_by('-created'),
+             "saved_for_later": self.is_stored_post(request, post.id)
         }
         return render(request, "blog/post-detail.html", context )
 
 
-class SearchView(ListView):
+class SearchView(ListView):  #search articles into the blog
     model = Post
     template_name= "blog/searcharticle.html"
     context_object_name= 'search_article'
@@ -109,7 +121,7 @@ class SearchView(ListView):
         return object_list.order_by('-date')
     
 
-class ReadLaterView(View):
+class ReadLaterView(View): #save an article during a session with cookies
 
     def get(self, request):
         stored_posts = request.session.get('stored_posts')
@@ -136,7 +148,10 @@ class ReadLaterView(View):
         
         if post_id not in stored_posts:
           stored_posts.append(post_id)
-          request.session["stored_posts"] = stored_posts
+          
+        else:
+            stored_posts.remove(post_id)
+        request.session["stored_posts"] = stored_posts
         
         return HttpResponseRedirect('/')
 

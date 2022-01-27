@@ -13,6 +13,8 @@ body {
   margin: 0;
 }
 
+
+
 h1,
 h2,
 h3 {
@@ -32,6 +34,10 @@ h3 {
   left: 0;
 }
 
+#main-navigation nav,h1 {
+  margin: auto;
+  white-space:nowrap;
+}
 
 
 #main-navigation a {
@@ -39,6 +45,7 @@ h3 {
   color: white;
   font-weight: bold;
   margin-left: 1rem;
+  
 }
 
 #main-navigation a:hover,
