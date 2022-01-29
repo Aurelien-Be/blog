@@ -5,11 +5,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content:"width=device-width, initial-scale=1.0">
+
+    {% if object.slug in request.path %}
+    <title>{{object.title}}</title>
+    <meta property="og:title" content="{{object.title}}">
+    <meta name="description" property="og:description" content="{{object.content|striptags|truncatewords:20}}">
+    <meta property="og:image" content="{{object.image_field.url}}">
+    <meta name="twitter:card" value="summary">
+    {% elif request.path == '/' %}
+    <title>Aurélien's Blog</title>
+    <meta name="Aurelien's blog" content="Welcome to my blog.">
+    <meta property="og:image" content="blog/images/profilpic.jpg">
+    {%endif%}
+
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static "app.css" %}">
     <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data-10-year-range.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data-10-year-range.js"></script>
+ 
     {% block css_files %}{%endblock%}
 
   </head>
@@ -19,8 +33,7 @@
          <nav>
           <a href="https://abeveraggi.pythonanywhere.com/contact.html">Contact me (first Flask website)</a>
        </nav>
-         <!--we use the name of the url that we added in url.py-->
-         <nav class="menu">
+        <nav class="menu">
            <a href="{% url "read-later" %}">Stored posts</a>
            <a href="{% url "posts-page" %}">All posts</a>
           <!--we use the name of the url that we added in url.py-->
