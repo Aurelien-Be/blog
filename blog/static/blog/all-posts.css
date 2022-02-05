@@ -19,6 +19,10 @@ body {
     color: white;
     margin: 3rem 0;
   }
+
+  #post-content p {
+    text-align: left;
+  }
   
   #search h3 {
     color : white
@@ -32,6 +36,9 @@ body {
     gap: 1.5rem;
   }
   
+ p{
+      text-align: left;
+  }
   .post img {
     width: 7rem;
     height: 7rem;
@@ -39,7 +46,6 @@ body {
   
   .post a {
     height: 22rem;
-    transform-origin: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     background-color: white;

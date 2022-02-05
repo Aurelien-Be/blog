@@ -36,12 +36,22 @@ body {
   }
   
   #summary article img {
-    width: 12rem;
-    height: 12rem;
+    max-width: 24rem;
+    max-height: auto;
     border-radius: 12px;
-    transform: rotateZ(5deg);
+    transform: rotateZ(3deg);
     border: 5px solid white;
     margin-bottom: 1rem;
+    opacity:90%
+
+  }
+  #summary article img:hover {
+    opacity: 100%;
+  }
+
+  @media screen and (max-width:1380px) {
+    #summary article img {
+      opacity:5%}
   }
   
   #summary address {
@@ -83,6 +93,8 @@ body {
     padding: 1rem;
 
   }
+
+
 
   .tag {
     background-color: white;

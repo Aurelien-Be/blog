@@ -76,6 +76,11 @@ h2> span  :nth-child(2) {
   #latest-posts li {
     flex: 1;
   }
+
+  #latest-posts li p {
+    text-align: left;
+    font-weight: normal;
+  }
   
   #about {
     text-align: center;
