@@ -24,5 +24,7 @@ urlpatterns = [
     #"" is the leading path segment 
     #in the second agument the blog urls, blog is the app and folder name, urls the file
     #we let the first string empty in order to access to the blog without adding /blog in the navigator 
-    
-] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #to access to images uploaded
+
+#to access to images uploaded   :
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
+  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

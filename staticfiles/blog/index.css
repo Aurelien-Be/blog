@@ -1,0 +1,121 @@
+#welcome {
+    background: linear-gradient(to right top, #202025, #0e0b13);
+    padding: 6rem 12%;
+  }
+  
+  #welcome header {
+    display: flex;
+    align-items: flex-start;
+    margin: 3rem auto;
+  }
+  
+  #welcome img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    object-position: top;
+    border: 5px solid white;
+    border-radius: 12px;
+    background-color: #ffe1bf;
+    transform: rotateZ(-5deg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  #welcome h2 {
+    font-size: 3.5rem;
+    margin: 0 0 0 2rem;
+    color: #e4e4e4;
+    width: 10rem;
+  }
+h2 {
+  color:white
+}
+  h2 > span {
+    overflow: hidden;
+    display:block;
+    min-width: 500px;  
+ }
+
+h2> span  :nth-child(2) {
+  animation-delay: 5s;
+}
+
+  h2 > span > span {
+    display: block;
+    animation: spanFadeIn 500ms ease forwards;
+    transform: translateY(50%);
+ }
+
+
+  #welcome p {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  #latest-posts {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 60rem;
+    margin: -6rem auto 2rem auto;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  #latest-posts h2 {
+    text-align: center;
+  }
+  
+  #latest-posts ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  #latest-posts li {
+    flex: 1;
+  }
+
+  #latest-posts li p {
+    text-align: left;
+    font-weight: normal;
+  }
+  
+  #about {
+    text-align: center;
+    padding: 3rem;
+    background-color: #0e0b13;
+    margin-top: 5rem;
+  }
+
+  #about img {
+    width: 10rem;
+    height: 10rem;
+    object-fit:scale-down;
+    object-position: left;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  #about h2 {
+    font-size: 3rem;
+  }
+  
+  #about p, a{
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-decoration: none!important;
+  }
+
+
+
+  @keyframes spanFadeIn {
+    0% {
+      transform: translateY(100%);
+   }
+    100% {
+      transform: translateY(0%);
+   }
+ }
+  
